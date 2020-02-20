@@ -1,0 +1,10 @@
+target/
+# Editor directories and files
+.idea
+*.iml
+
+# eclipse ide files
+**/.project
+**/.settings
+**/.classpath
+
