@@ -15,20 +15,30 @@ public class NumbersFixtureTest {
 
     @Before
     public void before() {
-        numbers = new Numbers();
+        numbers = new Numbers(new ArrayList<>());
     }
 
     @Test
-    public void testNumbersCombain() {
-        List resList9 = numbers.getCombainedStr("9", new ArrayList<>());
+    public void testNumbersCombain9() {
+        int[] numbers9 = new int[]{9};
+        List resList9 = numbers.getCombainedStr(numbers9);
         List<String> expectedResultNumber9 = Arrays.asList("w", "x", "y", "z");
         assertEquals(expectedResultNumber9,resList9);
+    }
 
-        List resList23 = numbers.getCombainedStr("23", new ArrayList<>());
+    @Test
+    public void testNumbersCombain23() {
+
+        int[] numbers23 = new int[]{2,3};
+        List resList23 = numbers.getCombainedStr(numbers23);
         List<String> expectedResultNumber23 = Arrays.asList("ad" , "ae", "af", "bd", "be", "bf", "cd", "ce", "cf");
         assertEquals(expectedResultNumber23,resList23);
+    }
 
-        List resList47 = numbers.getCombainedStr("47", new ArrayList<>());
+    @Test
+    public void testNumbersCombain47() {
+        int[] numbers47 = new int[]{4,7};
+        List resList47 = numbers.getCombainedStr(numbers47);
         List<String> expectedResultNumber47 = new ArrayList<>(){{
             add("gp");add("gq");add("gr");add("gs");
             add("hp");add("hq");add("hr");add("hs");
